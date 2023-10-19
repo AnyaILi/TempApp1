@@ -14,6 +14,14 @@
 		611ADFAB2AE10DD20096F848 /* TempApp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFAA2AE10DD20096F848 /* TempApp1Tests.swift */; };
 		611ADFB52AE10DD20096F848 /* TempApp1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFB42AE10DD20096F848 /* TempApp1UITests.swift */; };
 		611ADFB72AE10DD20096F848 /* TempApp1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFB62AE10DD20096F848 /* TempApp1UITestsLaunchTests.swift */; };
+		611ADFC42AE1115B0096F848 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFC32AE1115B0096F848 /* Profile.swift */; };
+		611ADFC62AE1117E0096F848 /* NewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFC52AE1117E0096F848 /* NewProfileView.swift */; };
+		611ADFC82AE1124D0096F848 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFC72AE1124D0096F848 /* Homepage.swift */; };
+		611ADFCA2AE1126E0096F848 /* InfoBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFC92AE1126E0096F848 /* InfoBoard.swift */; };
+		611ADFCC2AE112930096F848 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFCB2AE112930096F848 /* TimePicker.swift */; };
+		611ADFCE2AE112F40096F848 /* ProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFCD2AE112F40096F848 /* ProfileItem.swift */; };
+		611ADFD32AE113780096F848 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFD12AE113400096F848 /* ProfileStore.swift */; };
+		611ADFD42AE1137B0096F848 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFCF2AE1131F0096F848 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		611ADFB02AE10DD20096F848 /* TempApp1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempApp1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		611ADFB42AE10DD20096F848 /* TempApp1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempApp1UITests.swift; sourceTree = "<group>"; };
 		611ADFB62AE10DD20096F848 /* TempApp1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempApp1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		611ADFC32AE1115B0096F848 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		611ADFC52AE1117E0096F848 /* NewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileView.swift; sourceTree = "<group>"; };
+		611ADFC72AE1124D0096F848 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		611ADFC92AE1126E0096F848 /* InfoBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoard.swift; sourceTree = "<group>"; };
+		611ADFCB2AE112930096F848 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		611ADFCD2AE112F40096F848 /* ProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItem.swift; sourceTree = "<group>"; };
+		611ADFCF2AE1131F0096F848 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		611ADFD12AE113400096F848 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +111,15 @@
 			isa = PBXGroup;
 			children = (
 				611ADF992AE10DCE0096F848 /* TempApp1App.swift */,
+				611ADFC32AE1115B0096F848 /* Profile.swift */,
+				611ADFC52AE1117E0096F848 /* NewProfileView.swift */,
+				611ADFC72AE1124D0096F848 /* Homepage.swift */,
+				611ADFC92AE1126E0096F848 /* InfoBoard.swift */,
+				611ADFCB2AE112930096F848 /* TimePicker.swift */,
+				611ADFCD2AE112F40096F848 /* ProfileItem.swift */,
 				611ADF9B2AE10DCE0096F848 /* ContentView.swift */,
+				611ADFCF2AE1131F0096F848 /* ContentViewModel.swift */,
+				611ADFD12AE113400096F848 /* ProfileStore.swift */,
 				611ADF9D2AE10DD10096F848 /* Assets.xcassets */,
 				611ADF9F2AE10DD10096F848 /* Preview Content */,
 			);
@@ -258,6 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				611ADF9C2AE10DCE0096F848 /* ContentView.swift in Sources */,
+				611ADFC62AE1117E0096F848 /* NewProfileView.swift in Sources */,
+				611ADFCC2AE112930096F848 /* TimePicker.swift in Sources */,
+				611ADFC42AE1115B0096F848 /* Profile.swift in Sources */,
+				611ADFD42AE1137B0096F848 /* ContentViewModel.swift in Sources */,
+				611ADFCE2AE112F40096F848 /* ProfileItem.swift in Sources */,
+				611ADFD32AE113780096F848 /* ProfileStore.swift in Sources */,
+				611ADFC82AE1124D0096F848 /* Homepage.swift in Sources */,
+				611ADFCA2AE1126E0096F848 /* InfoBoard.swift in Sources */,
 				611ADF9A2AE10DCE0096F848 /* TempApp1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
