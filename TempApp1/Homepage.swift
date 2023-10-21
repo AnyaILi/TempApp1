@@ -82,5 +82,5 @@ struct Homepage: View {
 }
 
 #Preview {
-    Homepage(profile: ProfileItem(name: "", title: "", startTime: Date))
+    Homepage(profile: ProfileItem(name: "", title: "", startTime: Foundation.Date()))
 }
