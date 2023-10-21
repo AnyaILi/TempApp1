@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Homepage: View {
-    var profile: ProfileItem
+    var profile = ProfileItem(name: "", title: "", startTime: Foundation.Date())
     @StateObject private var viewModel: ContentViewModel
 
     init(profile: ProfileItem){
