@@ -15,8 +15,7 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
     var profile: ProfileItem
     init(profile: ProfileItem){
         self.profile = profile
-        self.locationManager?.allowsBackgroundLocationUpdates = true
-        self.locationManager?.showsBackgroundLocationIndicator = true
+        super.init()
     }
     var locationManager: CLLocationManager?
     
@@ -25,6 +24,10 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             locationManager = CLLocationManager()
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager!.delegate = self
+            self.locationManager?.allowsBackgroundLocationUpdates = true
+            self.locationManager?.showsBackgroundLocationIndicator = true
+            monitorRegionAtLocation(center: MapDetails.startingLocation, identifier: "Home")
+
         }
         else{
             print("Show an alert letting them know this is off")
@@ -46,21 +49,39 @@ final class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDeleg
             break
         }
     }
+    
+    func monitorRegionAtLocation(center: CLLocationCoordinate2D, identifier: String ) {
+        // Make sure the devices supports region monitoring.
+        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            // Register the region.
+            let maxDistance = locationManager!.maximumRegionMonitoringDistance
+            let region = CLCircularRegion(center: center,
+                 radius: maxDistance, identifier: identifier)
+            region.notifyOnEntry = true
+            region.notifyOnExit = false
+       
+            locationManager!.startMonitoring(for: region)
+            
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion){
         let content = UNMutableNotificationContent()
         content.title = "Test"
         content.subtitle = "Work"
         content.sound = UNNotificationSound.default
 
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-
-
+//        var dateComponents = DateComponents()
+//        dateComponents.calendar = Calendar.current
+        
+        let components = Calendar.current.dateComponents([.hour, .minute], from: profile.startTime)
+//        let hour = components.hour ?? 0
+//        let minute = components.minute ?? 0
 //                    dateComponents.weekday = 1
-//        dateComponents.hour = ProfileItem.startingTime.hour
-//        dateComponents.minute = ProfileItem.startingTime.minute
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+//        components.hour = hour
+//        dateComponents.minute = minute
+        
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
 
         // show this notification five seconds from now
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)

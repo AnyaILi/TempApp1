@@ -21,7 +21,23 @@ struct TempAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(store)//.environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView() {
+                Task {
+                    do {
+                        try await store.save(scrums: store.profile)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .task {
+                do {
+                    try await store.load()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
+            .environmentObject(store)
         }
     }
 }

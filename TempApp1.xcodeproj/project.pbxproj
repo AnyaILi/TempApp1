@@ -22,6 +22,10 @@
 		611ADFCE2AE112F40096F848 /* ProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFCD2AE112F40096F848 /* ProfileItem.swift */; };
 		611ADFD32AE113780096F848 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFD12AE113400096F848 /* ProfileStore.swift */; };
 		611ADFD42AE1137B0096F848 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ADFCF2AE1131F0096F848 /* ContentViewModel.swift */; };
+		616783882AE5CEBB006F9A99 /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616783872AE5CEBB006F9A99 /* LocationSearchService.swift */; };
+		6167838A2AE5CF01006F9A99 /* AddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616783892AE5CF01006F9A99 /* AddressPicker.swift */; };
+		6167838C2AE5CF2F006F9A99 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6167838B2AE5CF2F006F9A99 /* SearchBar.swift */; };
+		6167838E2AE5CF7A006F9A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6167838D2AE5CF7A006F9A99 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		611ADFCD2AE112F40096F848 /* ProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItem.swift; sourceTree = "<group>"; };
 		611ADFCF2AE1131F0096F848 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		611ADFD12AE113400096F848 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStore.swift; sourceTree = "<group>"; };
+		616783872AE5CEBB006F9A99 /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
+		616783892AE5CF01006F9A99 /* AddressPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPicker.swift; sourceTree = "<group>"; };
+		6167838B2AE5CF2F006F9A99 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		6167838D2AE5CF7A006F9A99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,10 @@
 				611ADF992AE10DCE0096F848 /* TempApp1App.swift */,
 				611ADFC32AE1115B0096F848 /* Profile.swift */,
 				611ADFC52AE1117E0096F848 /* NewProfileView.swift */,
+				616783872AE5CEBB006F9A99 /* LocationSearchService.swift */,
+				616783892AE5CF01006F9A99 /* AddressPicker.swift */,
+				6167838B2AE5CF2F006F9A99 /* SearchBar.swift */,
+				6167838D2AE5CF7A006F9A99 /* SceneDelegate.swift */,
 				611ADFC72AE1124D0096F848 /* Homepage.swift */,
 				611ADFC92AE1126E0096F848 /* InfoBoard.swift */,
 				611ADFCB2AE112930096F848 /* TimePicker.swift */,
@@ -281,15 +293,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6167838C2AE5CF2F006F9A99 /* SearchBar.swift in Sources */,
+				6167838E2AE5CF7A006F9A99 /* SceneDelegate.swift in Sources */,
 				611ADF9C2AE10DCE0096F848 /* ContentView.swift in Sources */,
 				611ADFC62AE1117E0096F848 /* NewProfileView.swift in Sources */,
 				611ADFCC2AE112930096F848 /* TimePicker.swift in Sources */,
 				611ADFC42AE1115B0096F848 /* Profile.swift in Sources */,
 				611ADFD42AE1137B0096F848 /* ContentViewModel.swift in Sources */,
 				611ADFCE2AE112F40096F848 /* ProfileItem.swift in Sources */,
+				616783882AE5CEBB006F9A99 /* LocationSearchService.swift in Sources */,
 				611ADFD32AE113780096F848 /* ProfileStore.swift in Sources */,
 				611ADFC82AE1124D0096F848 /* Homepage.swift in Sources */,
 				611ADFCA2AE1126E0096F848 /* InfoBoard.swift in Sources */,
+				6167838A2AE5CF01006F9A99 /* AddressPicker.swift in Sources */,
 				611ADF9A2AE10DCE0096F848 /* TempApp1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

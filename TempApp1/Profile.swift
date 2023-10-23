@@ -12,6 +12,7 @@ import Foundation
 
 struct Profile: View {
     @Environment(\.managedObjectContext) var context
+    @EnvironmentObject var profileStore: ProfileStore
     @State private var showNewTask = false
 //    @FetchRequest(
 //        entity: Profile1.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \Profile1.id, ascending: false) ])
@@ -45,27 +46,27 @@ struct Profile: View {
                 .padding()
                 Spacer()
                 List {
-//                    ForEach(profileItems) { profileItem in
-//                        let name = profileItem.name ?? "No name"
-//                        let title = profileItem.title ?? "No title"
-//                        
-//                        let display = name + "\n" + title
-//                        Text(display)
+                    ForEach(profileStore.profile) { profileItem in
+                        let name = profileItem.name 
+                        let title = profileItem.title 
+                        
+                        let display = name + "\n" + title
+                        Text(display)
+                            .font(.custom("KosugiMaru-Regular", size: 20))
+//                        let dateFormatter = DateFormatter()
+//                        dateFormatter.dateStyle = .medium
+//                        dateFormatter.timeStyle = .short
+                                                
+//                        print(dateFormatter.string(from:                         profileItems.startTime)) // December 31
+//
+//                        Text(dateFormatter.string(from:                         profileItems.startTime))
 //                            .font(.custom("KosugiMaru-Regular", size: 20))
-////                        let dateFormatter = DateFormatter()
-////                        dateFormatter.dateStyle = .medium
-////                        dateFormatter.timeStyle = .short
-//                                                
-////                        print(dateFormatter.string(from:                         profileItems.startTime)) // December 31
-////
-////                        Text(dateFormatter.string(from:                         profileItems.startTime))
-////                            .font(.custom("KosugiMaru-Regular", size: 20))
-//                    }
+                    }
 //                    .onDelete(perform: deleteTask)
-//                    
+                    
                     
                 }
-                // .listStyle(.plain)
+                 .listStyle(.plain)
                 
                 
             }
@@ -94,5 +95,5 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile()
+    Profile().environmentObject(ProfileStore())
 }

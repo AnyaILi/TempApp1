@@ -10,12 +10,14 @@ import SwiftUI
 
 struct NewProfileView: View {
     @Environment(\.managedObjectContext) var context
-    
+    @EnvironmentObject var profileStore: ProfileStore
     @State var title: String=""
     @State var name: String=""
     @State private var selection = "Student"
     @State private var startTime : Date = Date()
-    let titles = ["Student", "Office Worker"]
+    @State private var endTime : Date = Date()
+    @State private var isShowingSheet = false
+    let titles = ["Student", "Office Worker", "Home makers"]
     var body: some View {
         ZStack{
             Color(hex: "f6efe7")
@@ -65,6 +67,32 @@ struct NewProfileView: View {
                         Text("School Start Time:")
                         TimePicker(currentDate: $startTime)
                             .padding()
+                        Text("School End Time:")
+                        TimePicker(currentDate: $endTime)
+                            .padding()
+                        Button("School Address", action: {isShowingSheet.toggle()})
+                            .buttonStyle(.bordered)
+                            .foregroundColor(.black)
+                            .tint(.gray)
+                        
+//                        Button(action: {
+//                            isShowingSheet.toggle()
+//                        })
+//                        {
+//                            Text("Show License Agreement")
+//                        }
+//                        VStack {
+////                            Text("License Agreement")
+////                                .font(.title)
+////                                .padding(50)
+////                            Text("""
+////                                                Terms and conditions go here.
+////                                            """)
+////                            .padding(50)
+//                            Button("Dismiss",
+//                                   action: { isShowingSheet.toggle() })
+//                            
+//                        }
                     }
                     
                 }
@@ -73,11 +101,14 @@ struct NewProfileView: View {
                         Text("Work Start Time:")
                         TimePicker(currentDate: $startTime)
                             .padding()
+                        Text("Work End Time:")
+                        TimePicker(currentDate: $endTime)
+                            .padding()
                     }
                     
                 }
                 NavigationLink("Add"){
-                    Homepage(profile: ProfileItem(name: self.name, title: self.title, startTime: self.startTime))
+                    Homepage(profile: ProfileItem(name: self.name, title: self.title, startTime: self.startTime, endTime: self.endTime))
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                     
@@ -86,31 +117,39 @@ struct NewProfileView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(Color(hex: "F6EFE8"))
                 .cornerRadius(10)
-//                .simultaneousGesture(TapGesture().onEnded {
-//                    self.addTask(name: self.name, title: self.title, startTime: self.startTime)
-//                })
+                .simultaneousGesture(TapGesture().onEnded {
+                    profileStore.profile.append(ProfileItem(name: self.name, title: self.title, startTime: self.startTime, endTime: self.endTime))
+                })
                 
-            
-                    }
+                
             }
         }
-    private func addTask(name: String, title: String, startTime: Date) {
-            
-//        let task = Profile1(context: context)
-//        task.id = UUID()
-//        task.title = title
-//        task.name = name
-//        task.startTime = startTime
-//                
-//        do {
-//                    try context.save()
-//        } catch {
-//                    print(error)
-//        }
+        .sheet(isPresented: $isShowingSheet){
+            AddressPicker(locationSearchService: LocationSearchService())
+        }
+    }
+    
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
+    private func addTask(name: String, title: String, startTime: Date, endTime: Date) {
+        
+        //        let task = Profile1(context: context)
+        //        task.id = UUID()
+        //        task.title = title
+        //        task.name = name
+        //        task.startTime = startTime
+        //                
+        //        do {
+        //                    try context.save()
+        //        } catch {
+        //                    print(error)
+        //        }
         
     }
 }
+        
 
 #Preview {
-    NewProfileView()
+    NewProfileView().environmentObject(ProfileStore())
 }

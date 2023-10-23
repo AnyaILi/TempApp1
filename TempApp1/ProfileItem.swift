@@ -12,10 +12,13 @@ class ProfileItem: Identifiable, Codable{
     var id = UUID()
     var name : String
     var startTime: Date
+    var endTime: Date
     
-    init(name: String, title: String, startTime: Date){
+    
+    init(name: String, title: String, startTime: Date, endTime: Date){
         self.title = title
         self.name = name
         self.startTime = startTime
+        self.endTime = endTime
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Homepage: View {
-    var profile = ProfileItem(name: "", title: "", startTime: Foundation.Date())
+    var profile = ProfileItem(name: "", title: "", startTime: Foundation.Date(), endTime: Foundation.Date())
     @StateObject private var viewModel: ContentViewModel
 
     init(profile: ProfileItem){
@@ -82,5 +82,5 @@ struct Homepage: View {
 }
 
 #Preview {
-    Homepage(profile: ProfileItem(name: "", title: "", startTime: Foundation.Date()))
+    Homepage(profile: ProfileItem(name: "", title: "", startTime: Foundation.Date(), endTime: Foundation.Date()))
 }
