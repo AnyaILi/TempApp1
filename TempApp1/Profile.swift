@@ -82,7 +82,7 @@ struct Profile: View {
     }
 //    private func deleteTask(offsets: IndexSet) {
 //        withAnimation {
-//            offsets.map { profileItems[$0] }.forEach(context.delete)
+//            offsets.map { profileStore.profile }.forEach(context.delete)
 //            
 //            do {
 //                try context.save()

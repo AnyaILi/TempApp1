@@ -32,7 +32,7 @@ struct ContentView: View {
 
     var body : some View{
         NavigationStack{
-            if(profile == nil){
+            if(profileStore.profile.isEmpty){
                 NewProfileView()
                 //Test()
             }

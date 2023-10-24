@@ -108,7 +108,7 @@ struct NewProfileView: View {
                     
                 }
                 NavigationLink("Add"){
-                    Homepage(profile: ProfileItem(name: self.name, title: self.title, startTime: self.startTime, endTime: self.endTime))
+                    Homepage(profile: ProfileItem(name: self.name, title: self.selection, startTime: self.startTime, endTime: self.endTime))
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                     
@@ -118,7 +118,7 @@ struct NewProfileView: View {
                 .tint(Color(hex: "F6EFE8"))
                 .cornerRadius(10)
                 .simultaneousGesture(TapGesture().onEnded {
-                    profileStore.profile.append(ProfileItem(name: self.name, title: self.title, startTime: self.startTime, endTime: self.endTime))
+                    profileStore.profile.append(ProfileItem(name: self.name, title: self.selection, startTime: self.startTime, endTime: self.endTime))
                 })
                 
                 
